@@ -1,0 +1,18 @@
+projectName: <%= projectName %>
+author: <%= auhtor %>
+template:
+  url: https://github.com/YerkoPalma/choo-genesis
+  name: choo-genesis
+pages:
+  path: src/views
+  present: true
+elements:
+  path: src/components
+  present: true
+models:
+  path: src/models
+  present: true
+required:
+  - _choo.yaml
+  - _gitignore
+  - _package.json
