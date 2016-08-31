@@ -12,12 +12,25 @@
 
 (*) _Because all the work to make it offline first happen without your intervention, is all automatic thanks to npm build scripts and choo hooks_
 
+## Usage
+
+```bash
+# start an http local server with livereload
+$ npm run dev
+
+# run tests
+$ npm test
+
+# generate production files in a dist/ folder
+$ npm run build
+```
+
 ## Considerations
 
 - Service workers require https protocol.
 - Test arent working yet ([ref](https://github.com/mantoni/choo-test/issues/1))
 - Generators don't work, and the whole template actually, until [this](https://github.com/trainyard/choo-cli/issues/16) gets fixed
 
-## Licencia
+## License
 
 MIT © [Yerko Palma](https://github.com/YerkoPalma)
