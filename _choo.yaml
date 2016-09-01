@@ -1,5 +1,4 @@
 projectName: <%= projectName %>
-author: <%= auhtor %>
 template:
   url: https://github.com/YerkoPalma/choo-genesis
   name: choo-genesis

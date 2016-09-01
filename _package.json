@@ -25,7 +25,7 @@
       "babelify"
     ]
   },
-  "author": "<%= auhtor %>",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "choo": "^3.2.2",
