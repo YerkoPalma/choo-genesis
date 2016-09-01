@@ -1,5 +1,5 @@
 {
-  "name": "choo-genesis",
+  "name": "<%= projectName %>",
   "version": "1.0.0",
   "description": "Awesome site created with choo-genesis",
   "main": "src/app.js",
@@ -25,7 +25,7 @@
       "babelify"
     ]
   },
-  "author": "YerkoPalma",
+  "author": "<%= auhtor %>",
   "license": "MIT",
   "dependencies": {
     "choo": "^3.2.2",
