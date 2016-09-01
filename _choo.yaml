@@ -2,13 +2,13 @@ projectName: <%= projectName %>
 template:
   url: https://github.com/YerkoPalma/choo-genesis
   name: choo-genesis
-pages:
+page:
   path: src/views
   present: true
-elements:
+element:
   path: src/components
   present: true
-models:
+model:
   path: src/models
   present: true
 required:
