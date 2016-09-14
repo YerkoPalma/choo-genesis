@@ -17,7 +17,7 @@ function loadLocalState (element, state, send) {
   return function () {
     if (state.user.initial && process.env.NODE_ENV !== 'test') {
       localforage.getItem('app').then(localState => {
-        send('user:init', { localState })
+        if (localState) send('user:init', { localState })
       }).catch(err => {
         console.log(err)
       })

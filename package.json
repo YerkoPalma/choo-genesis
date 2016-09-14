@@ -1,5 +1,5 @@
 {
-  "name": "<%= projectName %>",
+  "name": "choo-genesis",
   "version": "1.0.0",
   "description": "Awesome site created with choo-genesis",
   "main": "src/app.js",
@@ -34,27 +34,27 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "choo": "^3.2.2",
+    "choo": "^3.3.0",
     "localforage": "^1.4.2"
   },
   "devDependencies": {
     "babel-preset-es2040": "^1.1.1",
     "browserify": "^13.1.0",
-    "budo": "^9.0.0",
+    "budo": "^9.1.0",
     "choo-log": "^1.4.0",
     "choo-test": "0.0.5",
     "component-emitter": "^1.2.1",
     "envify": "^3.4.1",
-    "es2040": "^1.2.2",
-    "gazer": "0.0.3",
+    "es2040": "^1.2.3",
+    "gazer": "^1.0.0",
     "insert-css": "^1.0.0",
     "less": "^2.7.1",
     "mochify": "^2.18.1",
     "sheetify": "^5.1.0",
-    "snazzy": "^4.0.1",
+    "snazzy": "^5.0.0",
     "standard": "^8.0.0",
     "sw-precache": "^4.0.0",
-    "uglifyify": "^3.0.2",
+    "uglifyify": "^3.0.3",
     "uglifyjs": "^2.4.10"
   }
 }
