@@ -25,11 +25,32 @@ $ npm test
 $ npm run build
 ```
 
-## Considerations
+## Hanling offline status
 
-- Service workers require https protocol.
-- Test arent working yet ([ref](https://github.com/mantoni/choo-test/issues/1))
-- Generators don't work, and the whole template actually, until [this](https://github.com/trainyard/choo-cli/issues/16) gets fixed
+If you need to handle offline mode, there are some tricks that can help you with. There is an [offline plugin](./src/offline.js) that manipulate choo hooks and wrappers for offline support.
+One of that hooks is triggered whenever an action takes place, and has the responsability to trigger a backup function if there is no internet connection.
+To use this, you have to send a `_backup` string in your `send` data. This string should be the name of the action that you expect to get executed.
+
+```javascript
+const model = {
+  state: {
+    username: '',
+    pass: ''
+  },
+  reducers: {
+    logIn: (data, state) => data.user
+  },
+  effects: {
+    connect: (data, state, send, done) => {
+      send('logIn', { _backup: '_connect' }, done)
+    },
+    _connect: (data, state, send, done) => {
+      send('logIn', {}, done)
+    }
+  }
+}
+
+```
 
 ## License
 

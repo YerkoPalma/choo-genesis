@@ -7,8 +7,7 @@
     "copy": "mkdir -p dist/assets/style && cp index.html dist/ && cp src/assets/style/main.css dist/assets/style",
     "dev:less": "lessc src/assets/style/main.less src/assets/style/main.css",
     "dev:js": "budo src/app.js --open --live --pushstate --host 0.0.0.0 --port 8080 --",
-    "dev:sw": "sw-precache --static-file-globs='dist/**/*.*'",
-    "dev": "npm run dev:sw && gazer -p 'src/assets/style/**/*.less' npm run dev:less & npm run dev:js",
+    "dev": "gazer -p 'src/assets/style/**/*.less' npm run dev:less & npm run dev:js",
     "test": "standard --verbose | snazzy && NODE_ENV=test mochify",
     "build:js": "NODE_ENV=production browserify -e src/app.js -o dist/app.js -t envify -t sheetify/transform -g uglifyify | uglifyjs",
     "build:sw": "sw-precache --root=dist --static-file-globs='dist/**/*.*'",
@@ -35,7 +34,9 @@
   "license": "MIT",
   "dependencies": {
     "choo": "^3.3.0",
-    "localforage": "^1.4.2"
+    "is-online": "^5.1.2",
+    "localforage": "^1.4.2",
+    "xtend": "^4.0.1"
   },
   "devDependencies": {
     "babel-preset-es2040": "^1.1.1",
