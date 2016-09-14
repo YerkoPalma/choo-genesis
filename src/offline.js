@@ -1,5 +1,6 @@
 /* global navigator */
 const xtend = require('xtend')
+const isOnline = require('is-online')
 const localforage = require('localforage')
 
 function offline (cb) {
@@ -31,15 +32,25 @@ function offline (cb) {
   const onStateChange = (data, state, prev, createSend) => {
     localforage.setItem('app', state).then(value => {
       // Do other things once the value has been saved.
-      console.log(value)
     }).catch(err => {
       // This code runs if there were any errors
       console.log(err)
     })
   }
+  const onAction = (data, state, name, caller, createSend) => {
+    isOnline(function (online) {
+      // if we are offline and also have a backup function, dispatch that backup function
+      if (!online && data._backup) {
+        const backupEffect = data._backup
+        delete data._backup
+        createSend(backupEffect, data)
+      }
+    })
+  }
   localforage.getItem('app').then(localState => {
     cb({
       onStateChange,
+      onAction,
       wrapInitialState: function (appState) {
         return xtend(appState, localState)
       }
