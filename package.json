@@ -52,6 +52,7 @@
     "less": "^2.7.1",
     "mochify": "^2.18.1",
     "sheetify": "^5.1.0",
+    "sinon": "^1.17.5",
     "snazzy": "^5.0.0",
     "standard": "^8.0.0",
     "sw-precache": "^4.0.0",
