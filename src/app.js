@@ -3,6 +3,7 @@ const sf = require('sheetify')
 const offline = require('./offline')
 const mainView = require('./views/main')
 
+sf('tachyons', { global: true })
 sf('./assets/style/main.css', { global: true })
 
 const app = choo()

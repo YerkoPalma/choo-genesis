@@ -43,7 +43,8 @@ function offline (cb) {
       if (!online && data._backup) {
         const backupEffect = data._backup
         delete data._backup
-        createSend(backupEffect, data)
+        const send = createSend(backupEffect, true)
+        send(backupEffect, data, false)
       }
     })
   }
