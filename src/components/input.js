@@ -4,11 +4,11 @@ function input (state, send) {
   return html`
     <div class="flex flex-row flex-wrap justify-center sans-serif">
       <p class="self-center lightest-blue">Not your name? change it!</p>
-      <input 
-        type="text" 
+      <input
+        type="text"
         class="self-center ml2 pa2"
         value="${state.user.username}"
-        oninput=${(e) => send('user:update', { payload: e.target.value })}>
+        oninput=${(e) => send('user:update', { payload: e.target.value, _backup: 'user:offUpdate' })}>
     </div>
   `
 }

@@ -43,7 +43,9 @@ function offline (cb) {
       if (!online && data._backup) {
         const backupEffect = data._backup
         delete data._backup
-        createSend(backupEffect, data)
+        const send = createSend(backupEffect, true)
+        // if is an effect needs to call the done callback, if not, it will add a harmless undefined param
+        send(backupEffect, data, false)
       }
     })
   }
