@@ -25,11 +25,11 @@ $ npm test
 $ npm run build
 ```
 
-## Hanling offline status
+## Handling offline status
 
 If you need to handle offline mode, there are some tricks that can help you with. There is an [offline plugin](./src/offline.js) that manipulate choo hooks and wrappers for offline support.
 One of that hooks is triggered whenever an action takes place, and has the responsability to trigger a backup function if there is no internet connection.
-To use this, you have to send a `_backup` string in your `send` data. This string should be the name of the action that you expect to get executed.
+To use this, you have to send a `_backup` string in your `send` data. This string should be the name of the action that you expect to get executed. So, your model and view should look like this:
 
 ```javascript
 const model = {
@@ -49,7 +49,14 @@ const model = {
     }
   }
 }
-
+const view = (state, send) => {
+  return html`
+    <button onclick=${(e) => send(
+        'update',
+        { payload: e.target.value, _backup: '_update' }
+      )}></button>
+  `
+}
 ```
 
 ## License
