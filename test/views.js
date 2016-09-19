@@ -21,7 +21,7 @@ describe('choo-app', () => {
 
   it('renders the view', () => {
     const h1 = app.$('h1')
-    assert.equal(h1.className, 'global-header')
+    assert.equal(h1.className, 'bodoni tc lightest-blue pt5 pb3')
     // input
   })
 
