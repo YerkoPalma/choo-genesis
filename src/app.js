@@ -1,6 +1,6 @@
 const choo = require('choo')
 const sf = require('sheetify')
-const offline = require('./offline')
+const offline = require('choo-offline')
 const mainView = require('./views/main')
 
 sf('tachyons', { global: true })
