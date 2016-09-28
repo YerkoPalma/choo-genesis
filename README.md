@@ -7,10 +7,9 @@
 - Offline first
     - Use [localforage](https://github.com/localForage/localForage) for local data storage
     - Use [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API), through [sw-precache](https://github.com/GoogleChrome/sw-precache), to cache assets
-- [Trello design pattern](https://github.com/trello/trellisheets/blob/master/styleguide.md) for stylesheets
 - Super simple! (*)
 
-(*) _Because all the work to make it offline first happen without your intervention, is all automatic thanks to npm build scripts and choo hooks_
+(*) _Because all the work to make it offline first happen without your intervention, is all automatic thanks to npm build scripts and [choo offline plugin](https://github.com/YerkoPalma/choo-offline)_
 
 ## Usage
 
@@ -27,7 +26,7 @@ $ npm run build
 
 ## Handling offline status
 
-If you need to handle offline mode, there are some tricks that can help you with. There is an [offline plugin](./src/offline.js) that manipulate choo hooks and wrappers for offline support.
+If you need to handle offline mode, there are some tricks that can help you with. There is an [offline plugin](https://github.com/YerkoPalma/choo-offline) that manipulate choo hooks and wrappers for offline support.
 One of that hooks is triggered whenever an action takes place, and has the responsability to trigger a backup function if there is no internet connection.
 To use this, you have to send a `_backup` string in your `send` data. This string should be the name of the action that you expect to get executed. So, your model and view should look like this:
 
